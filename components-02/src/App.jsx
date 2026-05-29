@@ -1,13 +1,14 @@
 import Bye from "./Bye"
 import Cards from "./Cards"
-import reactLogo from './assets/react.svg'
+import './App.css'
+// import reactLogo from './assets/react.svg'
 function App() {
 
   return(
  <>
-     <h1>hello</h1>
+     <h1>Hello this is my first time using css in jsx</h1>
      <Cards/>
-     <img src={reactLogo} alt="logo" />
+     {/* <img src={reactLogo} alt="logo" /> */}
      <Bye/>
  </>
   )
