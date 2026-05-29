@@ -9,7 +9,8 @@ function Bye() {
         textAlign:"center"
  };
  
-    return(    <> 
+    return(   
+     <> 
     <h1 style={headingStyle}>BYE - BYE </h1> 
     <h1 className={styles.test}>BYE - BYE </h1> 
     <h3 style={{ color : "white", backgroundColor:"black", textAlign:"center"}}>SAYONARA</h3>

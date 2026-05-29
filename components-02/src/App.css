@@ -1,4 +1,16 @@
 .test{
     color: red;
+    text-align: center;
     background-color: pink;
+    font-size: 50px;
+}
+
+.btn{
+    size: 25px;
+    color: beige;
+    background-color: brown;
+  border-radius: 6px;
+  box-shadow: 2px;
+transition: ease-out;
+
 }
