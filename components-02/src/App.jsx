@@ -1,14 +1,16 @@
 import './App.css'
-import Arrays from './Arrays'
-import Object from './Object'
+import ConditionalRendering from './ConditionalRendering'
+// import Arrays from './Arrays'
+// import Object from './Object'
 
 function App() {
 
   return(
     <>  
+    <ConditionalRendering/>
     
-<Arrays/>
-<Object/>
+{/* <Arrays/>
+<Object/> */}
  </>
   )
 }
