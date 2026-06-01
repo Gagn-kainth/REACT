@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F5E6C8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 60px;
+}
+
+.todo-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 0 20px;
+}
+
+.todo-card {
+    background-color: #FFF8E7;
+    border-radius: 24px;
+    padding: 32px;
+    box-shadow: 
+        0 10px 40px rgba(218, 165, 32, 0.15),
+        0 2px 8px rgba(0, 0, 0, 0.05);
+    border: 1px solid #F0D78C;
+}
+
+.todo-title {
+    color: #B8860B;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 24px;
+    color: #D4A843;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.stats span {
+    background-color: #FDF0C4;
+    padding: 4px 14px;
+    border-radius: 20px;
+    border: 1px solid #F5D76E;
+}
+
+.todo-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.todo-input {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid #F0D78C;
+    border-radius: 14px;
+    background-color: #FFFCF5;
+    color: #8B6914;
+    font-size: 0.95rem;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.todo-input::placeholder {
+    color: #D4B896;
+}
+
+.todo-input:focus {
+    border-color: #D4A843;
+    box-shadow: 0 0 0 4px rgba(212, 168, 67, 0.15);
+}
+
+.add-btn {
+    padding: 14px 24px;
+    background-color: #D4A843;
+    color: white;
+    border: none;
+    border-radius: 14px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.add-btn:hover {
+    background-color: #C49A3B;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 168, 67, 0.3);
+}
+
+.add-btn:active {
+    transform: translateY(0);
+}
+
+.todo-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 16px;
+    background-color: #FFFCF5;
+    border-radius: 14px;
+    border: 1.5px solid #F5E6C8;
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.todo-item:hover {
+    border-color: #F0D78C;
+    box-shadow: 0 4px 12px rgba(218, 165, 32, 0.08);
+    transform: translateX(4px);
+}
+
+.todo-item.completed {
+    background-color: #FAF3E0;
+    border-color: #E8D5A3;
+}
+
+.todo-text {
+    color: #8B6914;
+    font-size: 0.95rem;
+    cursor: pointer;
+    flex: 1;
+    padding-right: 12px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.todo-item.completed .todo-text {
+    text-decoration: line-through;
+    color: #C4A35A;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.complete-btn,
+.delete-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+}
+
+.complete-btn {
+    background-color: #FDF0C4;
+    color: #B8860B;
+}
+
+.complete-btn:hover {
+    background-color: #D4A843;
+    color: white;
+    transform: scale(1.1);
+}
+
+.delete-btn {
+    background-color: #FDE8E8;
+    color: #C0392B;
+}
+
+.delete-btn:hover {
+    background-color: #E74C3C;
+    color: white;
+    transform: scale(1.1);
+}
+
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #D4B896;
+    font-size: 0.95rem;
+}
+
+
+.todo-list::-webkit-scrollbar {
+    width: 6px;
+}
+
+.todo-list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.todo-list::-webkit-scrollbar-thumb {
+    background-color: #F0D78C;
+    border-radius: 10px;
+}
+
+/* Responsive */
+@media (max-width: 520px) {
+    body {
+        padding-top: 20px;
+    }
+    
+    .todo-card {
+        padding: 24px 20px;
+    }
+    
+    .todo-title {
+        font-size: 1.6rem;
+    }
+}
