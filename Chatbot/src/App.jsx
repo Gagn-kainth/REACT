@@ -1,6 +1,7 @@
 import { useState } from "react"
 import ChatInput from "./ChatInput"
 import ChatMessages from "./ChatMessages"
+import './App.css'
 
 function App() {
   const [chatMessages, setChatMessages] = useState([
@@ -27,15 +28,17 @@ function App() {
   ]);
 
   return (
-    <>
+    <div className="app-container">
+      <ChatMessages
+        chatMessages={chatMessages}
+        />
       <ChatInput
         chatMessages={chatMessages}
         setChatMessages={setChatMessages}
       />
-      <ChatMessages
-        chatMessages={chatMessages}
-      />
-    </>
+
+
+    </div>
   )
 }
 
