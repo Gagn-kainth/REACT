@@ -1,16 +1,40 @@
-import ChatInput from "./Chatinput"
-import ChatMessage from "./ChatMessage"
+import { useState } from "react"
+import ChatInput from "./ChatInput"
+import ChatMessages from "./ChatMessages"
 
 function App() {
-  
+  const [chatMessages, setChatMessages] = useState([
+    {
+      message: "hello chatbot",
+      sender: "user",
+      id: "id1",
+    },
+    {
+      message: "Hello! How can I help you?",
+      sender: "robot",
+      id: "id2",
+    },
+    {
+      message: "can you get me todays date",
+      sender: "user",
+      id: "id3",
+    },
+    {
+      message: "Today is June 10",
+      sender: "robot",
+      id: "id4",
+    },
+  ]);
 
   return (
     <>
-    <ChatInput/>
-    <ChatMessage message="hello chatbot" sender="user"/>
-    <ChatMessage message="Hello! How can I help you? "sender="robot"/>
-    <ChatMessage message="can you get me todays date" sender="user"/>
-    <ChatMessage message="Today is June 10"sender="robot"/>
+      <ChatInput
+        chatMessages={chatMessages}
+        setChatMessages={setChatMessages}
+      />
+      <ChatMessages
+        chatMessages={chatMessages}
+      />
     </>
   )
 }
