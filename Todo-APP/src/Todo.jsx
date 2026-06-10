@@ -9,7 +9,7 @@ function Todo() {
     e.preventDefault();
     if (newTodo.trim()) {
       setTodos([
-        ...todos,
+        ...todos,a
         { text: newTodo.trim(), completed: false, id: Date.now() },
       ]);
       setNewTodo("");
