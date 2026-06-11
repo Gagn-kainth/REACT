@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Chatbot } from "supersimpledev";
-
-
+import "./ChatInput.css";
 
 function ChatInput({ chatMessages, setChatMessages }) {
   const [inputText, setInputText] = useState('');
@@ -19,20 +18,20 @@ function ChatInput({ chatMessages, setChatMessages }) {
         id: crypto.randomUUID(),
       },
     ];
-    
+
     setChatMessages(newChatMessages);
 
-    const response = Chatbot.getResponse(inputText);  
+    const response = Chatbot.getResponse(inputText);
 
     setChatMessages([
-     ...newChatMessages,
-      { 
-        message: response, sender: "robot", id: crypto.randomUUID() 
+      ...newChatMessages,
+      {
+        message: response, sender: "robot", id: crypto.randomUUID()
       },
     ]);
     setInputText('');
   }
-  
+
   return (
     <div className="chat-input-container">
       <input
