@@ -9,12 +9,12 @@ function HomePage() {
   const[cart ,setCart]=useState([])
 
   useEffect(() =>{
-    axios.get('http://localhost:3000/api/products')
+    axios.get('/api/products')
       .then((Response)=>{
         setProducts(Response.data)
     });
 
-    axios.get('http://localhost:3000/api/cart-items')
+    axios.get('/api/cart-items')
     .then((Response)=>{
       setCart(Response.data)
     })
