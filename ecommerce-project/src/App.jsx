@@ -9,9 +9,11 @@ import TrackingPage from "./pages/tracking/TrackingPage";
 function App() {
   const [cart, setCart] = useState([]);
   useEffect(() => {
-    axios.get(" /api/cart-items?expand=product").then((Response) => {
-      setCart(Response.data);
-    });
+    const fetchAppData = async () => {
+      const response = await axios.get(" /api/cart-items?expand=product");
+      setCart(response.data);
+    };
+    fetchAppData();
   }, []);
 
   return (
@@ -19,8 +21,8 @@ function App() {
       <Routes>
         <Route index element={<HomePage cart={cart} />} />
         <Route path="checkout" element={<CheckoutPage cart={cart} />} />
-        <Route path="orders" element={<OrdersPage cart={cart}/>}/>
-        <Route path="tracking" element={<TrackingPage cart={cart}/>} />
+        <Route path="orders" element={<OrdersPage cart={cart} />} />
+        <Route path="tracking" element={<TrackingPage cart={cart} />} />
       </Routes>
     </>
   );
