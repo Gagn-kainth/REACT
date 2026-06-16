@@ -1,7 +1,7 @@
 import './header.css';
 import { Link } from 'react-router';
 
-function Header({cart}) {
+function Header({cart=[]}) {
 
   let totalQuantity =0;
 
