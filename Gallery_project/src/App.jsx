@@ -5,19 +5,22 @@ import { Camera } from "lucide-react";
 
 function App() {
   const [userData, setUserData] = useState([]);
+  const [index, setIndex] = useState(1);
   useEffect(() => {
     getData();
-  }, []);
+  }, [index]);
 
   const getData = async () => {
     const response = await axios.get(
-      "https://picsum.photos/v2/list?page=2&limit=18"
+      `https://picsum.photos/v2/list?page=${index}&limit=12`
     );
 
     setUserData(response.data);
   };
 
-  let printUserData = <h3 className="text-gray-700 font-light">No User Data Found</h3>;
+  let printUserData = (
+    <h3 className="text-gray-700 font-light">No User Data Found</h3>
+  );
 
   if (userData.length > 0) {
     printUserData = userData.map((user) => {
@@ -52,10 +55,22 @@ function App() {
       </h1>
       <div className="flex flex-wrap gap-4 justify-center">{printUserData}</div>
       <div className="flex justify-center gap-4 mt-4">
-        <button className="bg-amber-500 px-5 py-2 rounded-xl hover:bg-amber-300 hover:text-black hover:scale-105 active:scale-95   cursor-pointer text-sm  ">
+        <button
+          className="bg-amber-500 px-5 py-2 rounded-xl hover:bg-amber-300 hover:text-black hover:scale-105 active:scale-95   cursor-pointer text-sm"
+          onClick={() => {
+                if (index > 1) setIndex(index - 1);
+            
+          }}
+        >
           Prev
         </button>
-        <button className="bg-amber-500 px-5 py-2 rounded-xl hover:bg-amber-300 hover:text-black hover:scale-105 active:scale-95   cursor-pointer text-sm  ">
+        <button
+          className="bg-amber-500 px-5 py-2 rounded-xl hover:bg-amber-300 hover:text-black hover:scale-105 active:scale-95   cursor-pointer text-sm  "
+          onClick={() => {
+         
+              setIndex(index + 1);
+          }}
+        >
           Next
         </button>
       </div>
