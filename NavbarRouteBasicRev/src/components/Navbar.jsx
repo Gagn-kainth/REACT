@@ -55,6 +55,13 @@ function Navbar() {
             Contact
           </Link>
 
+          <Link
+            to="/product"
+            className="hover:text-black transition-colors duration-200"
+          >
+            Product
+          </Link>
+
           <button
             className="
               ml-2
@@ -127,6 +134,14 @@ function Navbar() {
             className="hover:text-black"
           >
             Contact
+          </Link>
+
+          <Link
+            to="/product"
+            onClick={() => setOpen(false)}
+            className="hover:text-black"
+          >
+            Product
           </Link>
 
           <button
